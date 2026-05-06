@@ -1,0 +1,22 @@
+Texture Pack Hash Guide
+Este documento explica cómo obtener el SHA-1 hash de un archivo .zip de un resource pack / texture pack para usarlo en Minecraft, proxies como Velocity o plugins personalizados.
+
+¿Qué es el hash?
+Minecraft utiliza un hash SHA-1 para verificar la integridad del texture pack descargado por el cliente.
+
+Ejemplo:
+8f3c2d7b0b6f5a8d4f0f2f4d1a6b9e7c3d2a1b0c
+
+Windows (PowerShell)
+Abre PowerShell en la carpeta donde está el .zip y ejecuta:
+Get-FileHash .\pack.zip -Algorithm SHA1
+
+Ejemplo:
+Get-FileHash .\ImperioPack.zip -Algorithm SHA1
+
+Resultado:
+Algorithm : SHA1
+Hash      : 8F3C2D7B0B6F5A8D4F0F2F4D1A6B9E7C3D2A1B0C
+Path      : C:\packs\ImperioPack.zip
+
+El valor que debes usar es únicamente el contenido de Hash.
