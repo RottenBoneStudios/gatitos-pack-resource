@@ -1,22 +1,87 @@
-Texture Pack Hash Guide
-Este documento explica cómo obtener el SHA-1 hash de un archivo .zip de un resource pack / texture pack para usarlo en Minecraft, proxies como Velocity o plugins personalizados.
+# GatitosMC Texture Pack Hash Guide
 
-¿Qué es el hash?
+Este documento explica cómo obtener el **SHA-1 hash** del archivo `.zip` del resource pack oficial de GatitosMC para usarlo en Minecraft, Velocity o plugins personalizados.
+
+---
+
+# ¿Qué es el hash?
+
 Minecraft utiliza un hash SHA-1 para verificar la integridad del texture pack descargado por el cliente.
 
 Ejemplo:
+
+```txt
 8f3c2d7b0b6f5a8d4f0f2f4d1a6b9e7c3d2a1b0c
+```
 
-Windows (PowerShell)
-Abre PowerShell en la carpeta donde está el .zip y ejecuta:
-Get-FileHash .\pack.zip -Algorithm SHA1
+---
 
-Ejemplo:
-Get-FileHash .\ImperioPack.zip -Algorithm SHA1
+# Windows (CMD)
+
+Abre CMD en la carpeta donde está el `.zip` y ejecuta:
+
+```cmd
+powershell Get-FileHash .\GatitosMC.zip -Algorithm SHA1
+```
 
 Resultado:
+
+```txt
 Algorithm : SHA1
 Hash      : 8F3C2D7B0B6F5A8D4F0F2F4D1A6B9E7C3D2A1B0C
-Path      : C:\packs\ImperioPack.zip
+Path      : C:\Users\Angel\Desktop\Texture Pack\GatitosMC.zip
+```
 
-El valor que debes usar es únicamente el contenido de Hash.
+El valor importante es únicamente el contenido de `Hash`.
+
+---
+
+# Linux
+
+En terminal:
+
+```bash
+sha1sum GatitosMC.zip
+```
+
+Resultado:
+
+```txt
+8f3c2d7b0b6f5a8d4f0f2f4d1a6b9e7c3d2a1b0c  GatitosMC.zip
+```
+
+---
+
+# macOS
+
+En terminal:
+
+```bash
+shasum -a 1 GatitosMC.zip
+```
+
+Resultado:
+
+```txt
+8f3c2d7b0b6f5a8d4f0f2f4d1a6b9e7c3d2a1b0c  GatitosMC.zip
+```
+
+---
+
+# Recomendaciones
+
+- El archivo debe estar comprimido en `.zip`
+- No modifiques el `.zip` después de generar el hash
+- Si cambias cualquier archivo del texture pack debes generar un nuevo hash
+- Minecraft utiliza SHA-1 para resource packs
+
+---
+
+# Ejemplo de uso
+
+```json
+{
+  "url": "https://tu-dominio.cl/GatitosMC.zip",
+  "hash": "8f3c2d7b0b6f5a8d4f0f2f4d1a6b9e7c3d2a1b0c"
+}
+```
