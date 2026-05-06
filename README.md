@@ -45,7 +45,7 @@ Dirígete a la carpeta donde está el texture pack.
 Ejemplo:
 
 ```txt
-C:\Users\Angel\Desktop\Texture Pack
+C:\Users\DIRECCION\Desktop\Texture Pack
 ```
 
 Luego abre CMD en esa ubicación.
@@ -65,7 +65,7 @@ powershell Get-FileHash .\GatitosMC.zip -Algorithm SHA1
 ```txt
 Algorithm : SHA1
 Hash      : 8F3C2D7B0B6F5A8D4F0F2F4D1A6B9E7C3D2A1B0C
-Path      : C:\Users\Angel\Desktop\Texture Pack\GatitosMC.zip
+Path      : C:\Users\DIRECCION\Desktop\Texture Pack\GatitosMC.zip
 ```
 
 ---
